@@ -45,3 +45,24 @@ FROM estudiante E
 JOIN inscripcion I ON E.id_estudiante = I.id_estudiante
 JOIN profesor P    ON I.id_curso = P.id_curso
 WHERE P.nom_profesor = 'JAIRO ORTIZ PABON';
+
+
+-- 2026-03-19 -----------------------------------------------
+
+-- Prueba COUNT - número total de estudiantes
+SELECT COUNT(*) "NUMERO DE ESTUDIANTES" FROM estudiante;
+
+
+-- 1B - Número de estudiantes de Ingeniería de Sistemas
+--      (desconocemos el id del programa, usamos JOIN con tabla programa)
+SELECT COUNT(*) "NUMERO DE ESTUDIANTES INGENIERIA DE SISTEMAS"
+FROM estudiante e JOIN programa p ON e.id_programa = p.id_programa
+WHERE p.nom_programa = 'INGENIERIA DE SISTEMAS';
+
+
+-- 1C - Mostrar el mayor ID de la tabla profesor (función MAX)
+SELECT MAX(id_profesor) "MAYOR ID PROFESOR" FROM profesor;
+
+
+-- 1D - Mostrar el menor ID de la tabla profesor (función MIN)
+SELECT MIN(id_profesor) "MENOR ID PROFESOR" FROM profesor;
