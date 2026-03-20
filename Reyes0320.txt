@@ -9,8 +9,8 @@ USE academia;
 GO
 
 -- 1. Agregar columna nota
---    DECIMAL(3,2): 3 digitos en total, 2 decimales (ej. 3.47)
-ALTER TABLE inscripcion ADD nota DECIMAL(3,2);
+--    DECIMAL(2,1): 2 digitos en total, 1 decimal (ej. 3.4)
+ALTER TABLE inscripcion ADD nota DECIMAL(2,1);
 GO
 
 -- 2. Agregar columna semestre

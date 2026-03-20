@@ -7,7 +7,7 @@ GO
 -- ============================================================
 
 -- 1. Agregar columna nota (decimal 3 digitos, 2 decimales)
-ALTER TABLE inscripcion ADD nota DECIMAL(3,2);
+ALTER TABLE inscripcion ADD nota DECIMAL(2,1);
 GO
 
 -- 2. Agregar columna semestre (entero)
