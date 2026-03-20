@@ -1,5 +1,5 @@
 -- ============================================================
--- EDICIÓN DE RESTRICCIONES — Base de datos: academia
+-- CLASE 2026-03-12 — Restricciones NOT NULL
 -- Agrega NOT NULL a columnas de nombre en todas las tablas
 -- ============================================================
 

@@ -1,6 +1,6 @@
 -- ============================================================
--- CREACIÓN DE TABLAS — Base de datos: academia
--- Orden: respeta las dependencias (FK)
+-- CLASE 2026-03-12 — Creación de tablas
+-- Base de datos: academia
 -- ============================================================
 
 USE academia;
