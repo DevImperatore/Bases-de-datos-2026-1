@@ -1,11 +1,16 @@
 # Bases de Datos — ITM 2026-1
 
-**Materia:** Desarrollo de Bases de Datos
-**Profesor:** Hector Jairo Ortiz Pabon
-**Motor:** SQL Server 2022 (SSMS)
-**Base de datos:** `academia`
+**Materia:** Desarrollo de Bases de Datos  
+**Profesor:** Hector Jairo Ortiz Pabon  
+**Thomas Reyes · Instituto Tecnológico Metropolitano**
+
+[![SQL Server](https://img.shields.io/badge/SQL_Server_2022-CC2927?style=flat&logo=microsoft-sql-server&logoColor=white)](https://www.microsoft.com/en-us/sql-server)
+[![T-SQL](https://img.shields.io/badge/T--SQL-blue?style=flat)](https://learn.microsoft.com/en-us/sql/t-sql/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Sistema académico con programas, cursos, estudiantes, profesores e inscripciones.
+
+---
 
 ## Estructura
 
@@ -35,6 +40,8 @@ docs/
 └── notas_clase_historico.md         — Notas de clase con INSERT completos
 ```
 
+---
+
 ## Esquema de tablas
 
 ```
@@ -44,33 +51,38 @@ curso    ──1:N──> profesor
 curso    ──1:N──> inscripcion <──N:1── estudiante
 ```
 
+---
+
 ## Cómo restaurar desde cero
 
-Opción 1 — Manual:
-```
-1. scripts/clase_2026-03-12/00_create_database.sql
-2. scripts/clase_2026-03-12/01_create_tables.sql
-3. scripts/clase_2026-03-12/02_alter_constraints.sql
-4. scripts/clase_2026-03-19/02_insert_datos.sql        (datos más recientes)
-5. scripts/clase_2026-03-20/01_alter_inscripcion.sql   (agrega nota + semestre)
+**Opción 1 — Paso a paso (recomendada para entender el orden):**
+
+```sql
+-- 1. Crear la base de datos
+-- scripts/clase_2026-03-12/00_create_database.sql
+
+-- 2. Crear las tablas
+-- scripts/clase_2026-03-12/01_create_tables.sql
+
+-- 3. Aplicar constraints adicionales
+-- scripts/clase_2026-03-12/02_alter_constraints.sql
+
+-- 4. Insertar datos (usar versión más reciente)
+-- scripts/clase_2026-03-19/02_insert_datos.sql
+
+-- 5. Agregar columnas nota y semestre
+-- scripts/clase_2026-03-20/01_alter_inscripcion.sql
 ```
 
-Opción 2 — Con procedimiento almacenado:
-```
-1. scripts/clase_2026-04-17/01_recrear_bd_con_procedimiento.sql
-2. scripts/clase_2026-03-19/02_insert_datos.sql
-3. scripts/clase_2026-03-20/01_alter_inscripcion.sql
+**Opción 2 — Con stored procedure (más rápido):**
+
+```sql
+-- 1. scripts/clase_2026-04-17/01_recrear_bd_con_procedimiento.sql
+-- 2. scripts/clase_2026-03-19/02_insert_datos.sql
+-- 3. scripts/clase_2026-03-20/01_alter_inscripcion.sql
 ```
 
-## Convención de commits
-
-| Prefijo | Cuándo usarlo |
-|---------|--------------|
-| `clase YYYY-MM-DD:` | Scripts o consultas de una clase |
-| `feat:` | Nueva tabla, vista, stored procedure |
-| `fix:` | Corrección de un script |
-| `refactor:` | Reorganización de archivos |
-| `taller:` | Entrega de taller específico |
+---
 
 ## Temas cubiertos
 
@@ -85,3 +97,15 @@ Opción 2 — Con procedimiento almacenado:
 - [x] Álgebra Relacional: σ, π, ⋈, ∪, −, ∩, ×, ÷, ρ
 - [ ] Cursores
 - [ ] T-SQL avanzado: variables, IF/ELSE, WHILE
+
+---
+
+## Convención de commits
+
+| Prefijo | Cuándo usarlo |
+|---------|--------------|
+| `clase YYYY-MM-DD:` | Scripts o consultas de una clase |
+| `feat:` | Nueva tabla, vista, stored procedure |
+| `fix:` | Corrección de un script |
+| `refactor:` | Reorganización de archivos |
+| `taller:` | Entrega de taller específico |
